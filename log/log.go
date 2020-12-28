@@ -34,6 +34,10 @@ type Logger struct {
 	lastRotateRW   sync.RWMutex
 }
 
+func init() {
+	_logger, _ = NewLogger("./log", zapcore.WarnLevel)
+}
+
 func NewLogger(path string, level string) (*Logger, error) {
 	out := new(Logger)
 	out.rlog = new(lumberjack.Logger)
