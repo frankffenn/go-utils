@@ -35,7 +35,7 @@ type Logger struct {
 }
 
 func init() {
-	_logger, _ = NewLogger("./log", zapcore.WarnLevel)
+	_logger, _ = NewLogger("./log", string(zapcore.WarnLevel))
 }
 
 func NewLogger(path string, level string) (*Logger, error) {
